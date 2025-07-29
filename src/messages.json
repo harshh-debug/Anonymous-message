@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Anonymous Feedback",
+    "content": "Sometimes, an outside perspective is all we need. Here's mine.",
+    "received": "Just now"
+  },
+  {
+    "title": "Unseen Well-Wisher",
+    "content": "You may not know me, but I wanted to say you're doing great.",
+    "received": "15 minutes ago"
+  },
+  {
+    "title": "Honest Thoughts",
+    "content": "Your work is impressive — just wanted to share that.",
+    "received": "1 hour ago"
+  },
+  {
+    "title": "Silent Observer",
+    "content": "I think there's room to improve, but you're on the right track.",
+    "received": "3 hours ago"
+  },
+  {
+    "title": "Friendly Stranger",
+    "content": "Got a minute? Here's something I've been meaning to tell you...",
+    "received": "Yesterday"
+  },
+  {
+    "title": "Anonymous Voice",
+    "content": "Sometimes it's easier to be honest when no one knows who you are.",
+    "received": "2 days ago"
+  }
+]
