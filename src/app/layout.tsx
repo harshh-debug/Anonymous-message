@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "True Feedback",
+  title: "UnseenNote",
   description: "Anonymous Messaging Platform",
   metadataBase: new URL("https://truefeedback.app"),
   openGraph: {
