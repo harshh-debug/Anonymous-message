@@ -6,7 +6,7 @@ import * as z from "zod"
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDebounceCallback } from 'usehooks-ts'
-import { toast, Toaster } from "sonner"
+import { toast } from "sonner"
 import { signUpSchema } from '@/schemas/signUpSchema';
 import axios, {AxiosError} from "axios";
 import { ApiRespone } from "@/types/ApiRespone";
@@ -73,7 +73,7 @@ const Page = () => {
     } catch (error) {
       console.error("Error during sign up:", error);
       const axiosError = error as AxiosError<ApiRespone>;
-      let errorMessage = axiosError.response?.data.message || 'An error occurred during sign up.';
+      const errorMessage = axiosError.response?.data.message || 'An error occurred during sign up.';
       toast.error("Sign Up failed", {
         description: errorMessage,
       });
@@ -88,7 +88,7 @@ const Page = () => {
       <div className="absolute -top-20 left-1/4 w-80 h-80 bg-gray-800 rounded-full filter blur-[100px] opacity-5"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gray-800 rounded-full filter blur-[120px] opacity-5"></div>
       
-      {/* <Toaster richColors position="top-right" theme="dark" /> */}
+      
       
       <div className="w-full max-w-md p-8 space-y-8 bg-gray-900/50 backdrop-blur-sm rounded-lg border border-gray-800 shadow-xl relative z-10">
         <div className="text-center">

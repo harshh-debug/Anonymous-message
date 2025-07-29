@@ -1,6 +1,6 @@
 'use client';
 import { useParams, useRouter } from 'next/navigation'
-import { toast, Toaster } from "sonner"
+import { toast } from "sonner"
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { verifySchema } from '@/schemas/verifySchema'
@@ -41,7 +41,7 @@ const VerifyAccount = () => {
         } catch (error) {
             console.error("Error verifying account:", error);
             const axiosError = error as AxiosError<ApiRespone>;            
-            let errorMessage = axiosError.response?.data.message ?? 'An error occurred while verifying the account.';
+            const errorMessage = axiosError.response?.data.message ?? 'An error occurred while verifying the account.';
             toast.error("Verification failed", {
                 description: errorMessage,
             })
@@ -56,7 +56,7 @@ const VerifyAccount = () => {
             <div className="absolute -top-20 left-1/4 w-80 h-80 bg-gray-800 rounded-full filter blur-[100px] opacity-5"></div>
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gray-800 rounded-full filter blur-[120px] opacity-5"></div>
             
-            {/* <Toaster richColors position="top-right" theme="dark" /> */}
+            
             
             <div className="w-full max-w-md p-8 space-y-8 bg-gray-900/50 backdrop-blur-sm rounded-lg border border-gray-800 shadow-xl relative z-10">
                 <div className="text-center">
@@ -107,7 +107,7 @@ const VerifyAccount = () => {
                 
                 <div className="text-center">
                     <p className="text-sm text-gray-500">
-                        Didn't receive a code?{' '}
+                       Didn&apos;t receive a code?{' '}
                         <button 
                             className="text-white hover:text-gray-300 underline underline-offset-4 transition-colors"
                             onClick={() => toast.info("Feature coming soon")}

@@ -15,37 +15,42 @@ export const authOptions:NextAuthOptions={
                 password: { label: "Password", type: "password" }
             },
 
-            async authorize(credentials:any):Promise<any>{
-                await dbconnect()
+
+            async authorize(credentials: Record<string, string> | undefined): Promise<any> {
+                await dbconnect();
 
                 try {
-                   const user= await UserModel.findOne({
-                        $or:[
-                            {email:credentials.identifier},
-                            {username:credentials.identifier}
-                        ]
-                    })
-                    if(!user){
-                        throw new Error("No user found with this email")
+                    const user = await UserModel.findOne({
+                    $or: [
+                        { email: credentials?.identifier },
+                        { username: credentials?.identifier }
+                    ]
+                    });
+
+                    if (!user) {
+                    throw new Error("No user found with this email");
                     }
 
-                    if(!user.isVerified){
-                        throw new Error("Please verify your account before login")
+                    if (!user.isVerified) {
+                    throw new Error("Please verify your account before login");
                     }
 
-                   const isPasswordCorrect = await bcrypt.compare(credentials.password,user.password)
+                    const isPasswordCorrect = await bcrypt.compare(credentials!.password, user.password);
 
-                   if(isPasswordCorrect){
-                    return user
-                   }else{
-                    throw new Error("Incorrect Password")
-                   }
-                    
-                } catch (err:any) {
-                    throw new Error(err)
-                    
+                    if (isPasswordCorrect) {
+                    return user;
+                    } else {
+                    throw new Error("Incorrect Password");
+                    }
+
+                } catch (err: unknown) {
+                    if (err instanceof Error) {
+                    throw new Error(err.message);
+                    }
+                    throw new Error("An unknown error occurred");
                 }
             }
+
         })
     ],
 

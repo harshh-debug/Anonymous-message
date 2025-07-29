@@ -1,5 +1,4 @@
 import mongoose,{Schema,Document} from "mongoose";
-import { unique } from "next/dist/build/utils";
 
 export interface Message extends Document {
     _id: string;
@@ -25,7 +24,7 @@ export interface User extends Document {
     password: string;
     verifyCode: string;
     verifyCodeExpiry: Date;
-    isVerified:Boolean;
+    isVerified:boolean;
     isAcceptingMessages:boolean;
     messages:Message[]
 }
