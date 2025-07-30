@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🕵️‍♂️ UnseenNote
 
-First, run the development server:
+UnseenNote is a full-stack web app that lets users receive anonymous messages and feedback through their own shareable links. Built with **Next.js**, **MongoDB**, and integrated with **Gemini AI** to suggest thoughtful messages.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🌐 Create your unique anonymous message link  
+- ✨ Gemini AI suggestions for senders  
+- 🔐 Email OTP verification on signup  
+- 🧾 Clean dashboard to view and delete received messages  
+- 📱 Responsive and minimal UI (built with `shadcn/ui`)  
+- 📊 Web analytics using Vercel Analytics  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔗 Try it Live
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Website:** [https://unseennote-blond.vercel.app](https://unseennote-blond.vercel.app)  
+**My Link (Try sending a message):** [https://unseennote-blond.vercel.app/u/harshjoshi09](https://unseennote-blond.vercel.app/u/harshjoshi09)
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend:** Next.js 14 (App Router), Tailwind CSS, TypeScript  
+- **Backend:** NextAuth.js, MongoDB, Mongoose  
+- **UI Components:** shadcn/ui  
+- **Email Service:** EmailS (for OTP verification)  
+- **AI Integration:** Gemini API (for suggesting messages)  
+- **Analytics:** Vercel Analytics  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧑‍💻 Setup Instructions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/harshh-debug/Anonymous-message.git
+   cd Anonymous-message
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Create a `.env.local` file**
+   Add the following environment variables:
+   ```env
+    MONGODB_URL=""             # Your MongoDB connection string
+    NEXTAUTH_SECRET=""         # Used by NextAuth.js
+    GEMINI_API_KEY=""          # Gemini AI API Key for suggestions
+    
+    EMAILJS_SERVICE_ID=""      # EmailJS Service ID
+    EMAILJS_TEMPLATE_ID=""     # EmailJS Template ID
+    EMAILJS_PRIVATE_KEY=""     # EmailJS Private Key
+   
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Run the app**
+   ```bash
+   npm run dev
+   ```
+
+## 🤖 AI Message Suggestions
+
+The app uses **Gemini API** to suggest sample anonymous messages. When someone visits your link and doesn’t know what to write, they can get help from AI-generated prompts.
+
+## 📬 Email Verification
+
+Every user must verify their email with an OTP sent via **EmailJS** during signup. This helps in avoiding spam and ensures real users.
+
+## 📊 Analytics
+
+**Vercel Analytics** is used to track visitor activity and page views to understand user behavior better.
+
+## 🙌 Feedback or Suggestions?
+
+Feel free to use my link and drop any anonymous feedback:  
+🔗 [https://unseennote-blond.vercel.app/u/harshjoshi09](https://unseennote-blond.vercel.app/u/harshjoshi09)
+
+
+---
+
+### ⭐ Star this repo if you found it interesting → [GitHub Repo](https://github.com/harshh-debug/Anonymous-message)
